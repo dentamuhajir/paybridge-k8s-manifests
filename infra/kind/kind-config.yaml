@@ -4,6 +4,6 @@ name: paybridge-cluster
 nodes:
   - role: control-plane
     extraPortMappings:
-      - containerPort: 30080
-        hostPort: 8080
-
+      - containerPort: 80
+        hostPort: 80
+        protocol: TCP

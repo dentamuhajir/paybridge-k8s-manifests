@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: paybridge-web
+  namespace: paybridge
 spec:
   type: NodePort
   selector:
@@ -9,4 +10,3 @@ spec:
   ports:
     - port: 80
       targetPort: 80
-      nodePort: 30080
