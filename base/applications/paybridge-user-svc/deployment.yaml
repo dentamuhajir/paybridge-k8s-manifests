@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: paybridge-user-svc
+  namespace: paybridge
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: paybridge-user-svc
+  template:
+    metadata:
+      labels:
+        app: paybridge-user-svc
+    spec:
+      containers:
+        - name: paybridge-user-svc
+          image: dentamuhajir/paybridge-user-svc:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: paybridge-user-svc-config
+            - secretRef:
+                name: paybridge-user-svc-secret
+          # Optional: health checks (recommended for Spring Boot)
+          readinessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            failureThreshold: 3
+          livenessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 15
+            failureThreshold: 3
