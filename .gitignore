@@ -2,3 +2,6 @@
 note
 
 /documents
+
+# Ignore the specific secret file
+base/applications/paybridge-user-svc/secret.yaml
