@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: paybridge-postgres
+  namespace: paybridge
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: paybridge-postgres
+  template:
+    metadata:
+      labels:
+        app: paybridge-postgres
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:16
+          ports:
+            - containerPort: 5432
+          envFrom:
+            - secretRef:
+                name: paybridge-postgres-secret
+          volumeMounts:
+            - name: postgres-storage
+              mountPath: /var/lib/postgresql/data
+      volumes:
+        - name: postgres-storage
+          persistentVolumeClaim:
+            claimName: paybridge-postgres-pvc
