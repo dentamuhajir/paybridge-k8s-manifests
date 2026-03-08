@@ -5,3 +5,4 @@ note
 
 # Ignore the specific secret file
 base/applications/paybridge-user-svc/secret.yaml
+base/infrastructures/postgres/secret.yaml
