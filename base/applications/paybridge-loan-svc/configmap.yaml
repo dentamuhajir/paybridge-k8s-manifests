@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: paybridge-loan-svc-config
+  namespace: paybridge
+data:
+  # Database 
+  POSTGRES_DB: "paybridge_loan"
+  SPRING_DATASOURCE_URL: "jdbc:postgresql://paybridge-postgres:5432/paybridge_loan"
+
+  # Surrounding Services
+  PRODUCT_SERVICE_BASE_URL: "http://paybridge-product-svc:8083"
+  TRANSACTION_SERVICE_BASE_URL: "http://paybridge-transaction-svc:8082"
+
+  # OpenTelemetry
+  MANAGEMENT_OTLP_TRACING_ENDPOINT: "http://paybridge-otel-collector:4318/v1/traces"
