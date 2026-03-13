@@ -15,6 +15,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: paybridge-user-svc
+                name: paybridge-loan-svc
                 port:
                   number: 8084
