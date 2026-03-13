@@ -3,12 +3,10 @@ kind: Ingress
 metadata:
   name: paybridge-loan-svc
   namespace: paybridge
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: nginx
   rules:
-    - host: paybridge-loan-svc.local     
+    - host: paybridge-loan-svc.local
       http:
         paths:
           - path: /
