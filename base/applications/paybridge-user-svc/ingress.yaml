@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: paybridge-user-svc.local     # change to your domain in prod
+    - host: user.paybridge.test
       http:
         paths:
           - path: /

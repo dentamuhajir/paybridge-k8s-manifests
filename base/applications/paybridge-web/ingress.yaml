@@ -6,7 +6,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: paybridge-web.local
+    - host: web.paybridge.test
       http:
         paths:
           - path: /
