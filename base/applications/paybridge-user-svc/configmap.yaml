@@ -5,7 +5,7 @@ metadata:
   namespace: paybridge
 data:
   SPRING_DATASOURCE_URL: "jdbc:postgresql://paybridge-postgres:5432/paybridge_user"
-  REDIS_HOST: "redis"
+  REDIS_HOST: "paybridge-redis"
   REDIS_PORT: "6379"
   TRANSACTION_SERVICE_ENDPOINT: "http://paybridge-transaction-svc:8082"
   JWT_TTL: "86400000"
