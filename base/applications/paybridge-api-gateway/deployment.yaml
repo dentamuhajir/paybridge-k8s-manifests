@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: paybridge-api-gateway
+  namespace: paybridge
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: paybridge-api-gateway
+  template:
+    metadata:
+      labels:
+        app: paybridge-api-gateway
+    spec:
+      containers:
+        - name: krakend
+          image: dentamuhajir/paybridge-gateway-svc:latest
+          imagePullPolicy: Always
+
+          ports:
+            - containerPort: 8000
+
+          envFrom:
+            - configMapRef:
+                name: paybridge-api-gateway-config
+            - secretRef:
+                name: paybridge-api-gateway-secret
