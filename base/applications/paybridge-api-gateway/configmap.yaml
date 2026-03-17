@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: paybridge-api-gateway-config
+  namespace: paybridge
+data:
+  USER_SERVICE_HOST: "http://http://user.paybridge.test"
+  LOAN_SERVICE_HOST: "http://paybridge-loan:8084"
+  GATEWAY_PORT: "8000"
+  GATEWAY_TIMEOUT: "10s"
