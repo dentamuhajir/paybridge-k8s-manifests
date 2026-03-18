@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: paybridge-web-config
+  namespace: paybridge
+data:
+  REACT_APP_API_USER_URL: "http://api.paybridge.test/api/v1"
