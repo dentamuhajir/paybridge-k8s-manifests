@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: krakend
-          image: dentamuhajir/paybridge-gateway-svc:135bc51
+          image: dentamuhajir/paybridge-gateway-svc:d8d1fb7
           imagePullPolicy: Always
 
           ports:
