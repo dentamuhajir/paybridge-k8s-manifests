@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: web
-          image: dentamuhajir/paybridge-web:dfb50b5
+          image: dentamuhajir/paybridge-web:55ceb37
           imagePullPolicy: Always
           ports:
             - containerPort: 80
