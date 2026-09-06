@@ -24,7 +24,12 @@ spec:
           volumeMounts:
             - name: postgres-storage
               mountPath: /var/lib/postgresql/data
+            - name: postgres-init-script
+              mountPath: /docker-entrypoint-initdb.d
       volumes:
         - name: postgres-storage
           persistentVolumeClaim:
             claimName: paybridge-postgres-pvc
+        - name: postgres-init-script
+          configMap:
+            name: paybridge-postgres-init

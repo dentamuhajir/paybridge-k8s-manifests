@@ -19,6 +19,9 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 8084
+          # env:
+          #   - name: OTEL_SDK_DISABLED
+          #     value: "true"
           envFrom:
             - configMapRef:
                 name: paybridge-loan-svc-config
